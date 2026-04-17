@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Sai Guest House – Daspalla, Odisha</title>
+<meta name="description" content="Comfortable, affordable stays in Daspalla, Nayagarh, Odisha. Book via WhatsApp.">
+<style>
+:root{
+  --gold:#B8960C;--gold-light:#F0C84A;--cream:#FDFAF4;--sand:#F5EDD8;
+  --brown:#6B4C1E;--dark:#3D2B0A;--ivory:#FAF6EE;--white:#fff;
+  --border:#E2D4B8;--green:#2E7D4F;--orange:#D4650A;--purple:#7C3AED;
+  --gray:#6B6B6B;--text:#1A1209;--light-gold:#FEF9EC;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Georgia',serif;background:var(--cream);color:var(--text);font-size:14px;}
+a{text-decoration:none;color:inherit;}
+button{cursor:pointer;font-family:inherit;}
+input,select,textarea{font-family:'Georgia',serif;}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:200;background:var(--dark);display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:56px;box-shadow:0 2px 12px rgba(0,0,0,.4);}
+.nav-logo{color:var(--gold);font-weight:bold;font-size:16px;line-height:1.2;cursor:pointer;}
+.nav-logo span{display:block;font-size:9px;color:#c9b07a;letter-spacing:2px;font-family:Arial,sans-serif;}
+.nav-links{display:flex;gap:2px;list-style:none;}
+.nav-links button{background:none;border:none;color:#d4c09a;font-size:12px;padding:6px 10px;border-radius:4px;font-family:Arial,sans-serif;transition:.2s;}
+.nav-links button:hover,.nav-links button.active{color:var(--gold);}
+.nav-right{display:flex;align-items:center;gap:8px;}
+.btn-login{background:var(--gold);color:var(--dark);border:none;padding:6px 14px;border-radius:4px;font-weight:bold;font-size:12px;font-family:Arial,sans-serif;}
+.btn-logout{background:transparent;border:1px solid #5a4a30;color:#d4c09a;padding:6px 12px;border-radius:4px;font-size:12px;font-family:Arial,sans-serif;}
+.manager-badge{background:#1a4a2a;color:#6fdd9a;font-size:10px;padding:3px 10px;border-radius:12px;font-family:Arial,sans-serif;font-weight:bold;}
+
+/* ── PAGES ── */
+.page{display:none;}.page.active{display:block;}
+
+/* ── HERO ── */
+.hero{min-height:92vh;background:linear-gradient(150deg,var(--dark) 0%,#5c3d1e 55%,#8a6030 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:70px 20px 40px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 20% 80%,rgba(184,150,12,.08) 0%,transparent 50%),radial-gradient(circle at 80% 20%,rgba(184,150,12,.06) 0%,transparent 50%);}
+.hero-badge{background:rgba(184,150,12,.15);border:1px solid var(--gold);color:var(--gold-light);font-size:11px;letter-spacing:3px;padding:5px 16px;border-radius:20px;margin-bottom:22px;font-family:Arial,sans-serif;position:relative;}
+.hero h1{font-size:clamp(28px,6vw,54px);color:var(--white);line-height:1.2;margin-bottom:14px;position:relative;}
+.hero h1 span{color:var(--gold);}
+.hero-sub{color:#e8d4b0;font-size:clamp(13px,2vw,16px);max-width:500px;line-height:1.85;margin-bottom:32px;font-family:Arial,sans-serif;position:relative;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;position:relative;}
+.btn-gold{background:var(--gold);color:var(--dark);padding:12px 26px;border-radius:4px;font-weight:bold;font-family:Arial,sans-serif;font-size:13px;border:none;transition:.2s;}
+.btn-gold:hover{background:#d4a814;}
+.btn-outline{background:transparent;color:var(--gold);padding:12px 26px;border-radius:4px;border:1.5px solid var(--gold);font-family:Arial,sans-serif;font-size:13px;transition:.2s;}
+.btn-outline:hover{background:rgba(184,150,12,.1);}
+.hero-stats{display:flex;gap:36px;margin-top:48px;flex-wrap:wrap;justify-content:center;position:relative;}
+.stat-num{font-size:28px;font-weight:bold;color:var(--gold);}
+.stat-lbl{font-size:10px;color:#b8a080;letter-spacing:1px;font-family:Arial,sans-serif;}
+
+/* ── SECTIONS ── */
+.sec{padding:56px 20px;}
+.sec-alt{padding:56px 20px;background:var(--sand);}
+.sec-dark{padding:56px 20px;background:var(--dark);}
+.container{max-width:1000px;margin:0 auto;}
+.sec-label{font-size:11px;letter-spacing:3px;color:var(--gold);font-family:Arial,sans-serif;text-align:center;margin-bottom:6px;}
+.sec-title{font-size:clamp(20px,4vw,34px);text-align:center;color:var(--brown);margin-bottom:8px;}
+.sec-title-white{font-size:clamp(20px,4vw,34px);text-align:center;color:var(--white);margin-bottom:8px;}
+.sec-line{width:44px;height:3px;background:var(--gold);margin:0 auto 36px;border-radius:2px;}
+.sec-sub{text-align:center;color:var(--gray);max-width:540px;margin:0 auto 36px;line-height:1.8;font-size:13px;font-family:Arial,sans-serif;}
+
+/* ── GRID ── */
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;}
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;}
+.grid-about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+.grid-contact{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+
+/* ── CARD ── */
+.card{background:var(--white);border:1px solid var(--border);border-radius:8px;overflow:hidden;box-shadow:0 2px 10px rgba(107,76,30,.07);transition:transform .2s,box-shadow .2s;}
+.card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(107,76,30,.13);}
+
+/* ── ABOUT ── */
+.about-img{background:linear-gradient(135deg,var(--dark),var(--brown));border-radius:10px;height:280px;display:flex;align-items:center;justify-content:center;font-size:90px;}
+.about-point{display:flex;align-items:center;gap:8px;margin-bottom:7px;font-size:13px;font-family:Arial,sans-serif;}
+.about-point::before{content:'✦';color:var(--gold);font-size:10px;flex-shrink:0;}
+
+/* ── ROOM CATEGORIES PREVIEW ── */
+.room-preview-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:16px;text-align:center;cursor:pointer;transition:.2s;}
+.room-preview-card:hover{border-color:var(--gold);box-shadow:0 4px 14px rgba(184,150,12,.15);}
+
+/* ── ROOMS PAGE ── */
+.rooms-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:24px;}
+.filter-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px;}
+.filter-btn{background:var(--white);border:2px solid var(--border);color:var(--brown);padding:6px 14px;border-radius:20px;font-size:12px;font-weight:bold;font-family:Arial,sans-serif;transition:.2s;}
+.filter-btn.active-all{background:var(--dark);border-color:var(--dark);color:var(--white);}
+.filter-btn.active-available{background:var(--green);border-color:var(--green);color:var(--white);}
+.filter-btn.active-booked{background:var(--orange);border-color:var(--orange);color:var(--white);}
+.filter-btn.active-reserved{background:var(--purple);border-color:var(--purple);color:var(--white);}
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:24px;font-size:12px;font-family:Arial,sans-serif;}
+.legend-item{display:flex;align-items:center;gap:6px;}
+.cat-section{margin-bottom:36px;}
+.cat-title{display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--border);}
+.cat-title-icon{font-size:22px;}
+.cat-title-main{font-weight:bold;font-size:16px;color:var(--brown);}
+.cat-title-sub{font-size:12px;color:var(--gray);font-family:Arial,sans-serif;}
+.room-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:10px;}
+.room-tile{border-radius:8px;border:2px solid var(--border);padding:10px 6px;text-align:center;cursor:default;transition:all .2s;background:var(--white);user-select:none;}
+.room-tile.manager-edit{cursor:pointer;}
+.room-tile.manager-edit:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.15);}
+.room-tile.s-available{border-color:var(--green);background:#f0fff6;}
+.room-tile.s-booked{border-color:var(--orange);background:#fff8f0;}
+.room-tile.s-reserved{border-color:var(--purple);background:#f5f0ff;}
+.room-tile-icon{font-size:22px;margin-bottom:3px;}
+.room-tile-id{font-size:10px;font-weight:bold;font-family:Arial,sans-serif;}
+.room-tile-dot{width:8px;height:8px;border-radius:50%;margin:4px auto;}
+.room-tile-status{font-size:9px;font-family:Arial,sans-serif;font-weight:bold;}
+.room-tile-resdate{font-size:8px;font-family:Arial,sans-serif;color:var(--purple);}
+/* Meeting hall */
+.meeting-card{background:var(--white);border:2px solid var(--border);border-radius:10px;padding:20px;max-width:440px;}
+.meeting-amenity{display:flex;align-items:center;gap:8px;font-size:13px;font-family:Arial,sans-serif;margin-bottom:6px;}
+
+/* ── AMENITIES ── */
+.amenity-card{background:rgba(255,255,255,.07);border:1px solid rgba(184,150,12,.2);border-radius:8px;padding:18px 12px;text-align:center;transition:.2s;}
+.amenity-card:hover{background:rgba(184,150,12,.1);}
+.amenity-icon{font-size:28px;margin-bottom:8px;}
+.amenity-name{font-size:12px;color:#e8d4b0;font-family:Arial,sans-serif;}
+
+/* ── REVIEWS ── */
+.rating-box{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:20px;max-width:260px;margin:0 auto 36px;text-align:center;}
+.big-rating{font-size:52px;font-weight:bold;color:var(--brown);}
+.review-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:20px;}
+.review-stars{color:var(--gold);font-size:14px;margin-bottom:10px;}
+.review-text{font-size:13px;color:var(--gray);line-height:1.75;font-style:italic;margin-bottom:14px;font-family:Arial,sans-serif;}
+.reviewer-row{border-top:1px solid var(--border);padding-top:10px;display:flex;justify-content:space-between;align-items:center;}
+.reviewer-name{font-weight:bold;font-size:12px;color:var(--brown);font-family:Arial,sans-serif;}
+.reviewer-loc{color:var(--gray);font-weight:normal;}
+.review-date{font-size:11px;color:var(--gray);font-family:Arial,sans-serif;}
+
+/* ── FAQ ── */
+.faq-item{border:1px solid var(--border);border-radius:6px;overflow:hidden;margin-bottom:10px;}
+.faq-q{padding:14px 18px;font-size:14px;font-weight:bold;color:var(--brown);cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:Arial,sans-serif;user-select:none;background:var(--white);}
+.faq-icon{color:var(--gold);font-size:18px;transition:.2s;}
+.faq-a{display:none;padding:0 18px 14px;font-size:13px;color:var(--gray);line-height:1.7;font-family:Arial,sans-serif;background:var(--white);}
+.faq-item.open .faq-a{display:block;}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+
+/* ── CONTACT ── */
+.cinfo-item{display:flex;gap:14px;margin-bottom:18px;}
+.cinfo-icon{font-size:20px;margin-top:2px;flex-shrink:0;}
+.cinfo-label{font-size:11px;color:var(--gold);font-family:Arial,sans-serif;letter-spacing:1px;margin-bottom:3px;}
+.cinfo-val{font-size:13px;line-height:1.6;font-family:Arial,sans-serif;}
+.wa-btn{display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#fff;padding:11px 18px;border-radius:6px;font-family:Arial,sans-serif;font-size:13px;font-weight:bold;margin-top:12px;border:none;transition:.2s;}
+.wa-btn:hover{background:#1ebe5d;}
+.map-box{background:var(--sand);border:1px solid var(--border);border-radius:8px;padding:20px;margin-top:20px;text-align:center;}
+.map-link{color:var(--gold);font-size:12px;font-family:Arial,sans-serif;border:1px solid var(--gold);padding:6px 14px;border-radius:4px;display:inline-block;margin-top:8px;transition:.2s;}
+.map-link:hover{background:var(--gold);color:var(--white);}
+.cf-field{margin-bottom:14px;}
+.cf-label{font-size:11px;font-weight:bold;font-family:Arial,sans-serif;color:var(--brown);display:block;margin-bottom:4px;letter-spacing:.5px;}
+.cf-input{width:100%;border:1px solid var(--border);border-radius:4px;padding:9px 10px;font-size:13px;outline:none;background:var(--cream);}
+.cf-input:focus{border-color:var(--gold);}
+.cf-textarea{width:100%;border:1px solid var(--border);border-radius:4px;padding:9px 10px;font-size:13px;outline:none;background:var(--cream);height:80px;resize:vertical;}
+.cf-textarea:focus{border-color:var(--gold);}
+.cf-select{width:100%;border:1px solid var(--border);border-radius:4px;padding:9px 10px;font-size:13px;outline:none;background:var(--cream);}
+
+/* ── MODAL ── */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:500;display:flex;align-items:center;justify-content:center;padding:20px;}
+.modal{background:var(--white);border-radius:10px;padding:28px;width:100%;max-width:360px;box-shadow:0 20px 60px rgba(0,0,0,.3);}
+.modal-title{font-weight:bold;font-size:18px;color:var(--brown);margin-bottom:4px;}
+.modal-sub{font-size:12px;color:var(--gray);font-family:Arial,sans-serif;margin-bottom:16px;}
+.m-label{font-size:11px;font-weight:bold;font-family:Arial,sans-serif;color:var(--brown);display:block;margin-bottom:3px;margin-top:12px;}
+.m-input{width:100%;border:1px solid var(--border);border-radius:4px;padding:9px 10px;font-size:13px;outline:none;background:var(--cream);}
+.m-input:focus{border-color:var(--gold);}
+.m-select{width:100%;border:1px solid var(--border);border-radius:4px;padding:9px 10px;font-size:13px;outline:none;background:var(--cream);}
+/* ── PIN PAD ── */
+.pin-dot{width:14px;height:14px;border-radius:50%;border:2px solid var(--border);background:transparent;transition:.2s;}
+.pin-dot.filled{background:var(--gold);border-color:var(--gold);}
+.pin-dot.error{background:#c0392b;border-color:#c0392b;}
+.pin-key{background:var(--cream);border:1.5px solid var(--border);border-radius:8px;padding:14px;font-size:18px;font-weight:bold;color:var(--brown);font-family:Arial,sans-serif;cursor:pointer;transition:.15s;}
+.pin-key:hover{background:var(--sand);border-color:var(--gold);}
+.pin-key:active{transform:scale(.95);}
+.pin-clear{color:#c0392b;border-color:#e8c0c0;}
+.pin-del{color:var(--gray);}
+@keyframes shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+.err-msg{color:#c0392b;font-size:12px;margin-top:8px;font-family:Arial,sans-serif;}
+.modal-btns{display:flex;gap:8px;margin-top:16px;}
+
+/* ── FOOTER ── */
+footer{background:var(--dark);color:#b8a080;padding:40px 20px 20px;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px;max-width:1000px;margin:0 auto 28px;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:28px;}
+.footer-brand-name{font-size:17px;color:var(--gold);font-weight:bold;margin-bottom:6px;}
+.footer-brand-p{font-size:12px;line-height:1.8;color:#8a7a60;font-family:Arial,sans-serif;}
+.footer-col-head{font-size:11px;letter-spacing:2px;color:var(--gold);margin-bottom:12px;font-family:Arial,sans-serif;}
+.footer-link{display:block;color:#8a7a60;font-size:12px;font-family:Arial,sans-serif;margin-bottom:8px;background:none;border:none;text-align:left;padding:0;cursor:pointer;transition:.2s;}
+.footer-link:hover{color:var(--gold);}
+.footer-bottom{text-align:center;font-size:11px;color:#5a4a30;font-family:Arial,sans-serif;max-width:1000px;margin:0 auto;}
+
+/* ── TOAST ── */
+#toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);padding:10px 22px;border-radius:20px;font-size:13px;font-family:Arial,sans-serif;z-index:9999;display:none;box-shadow:0 4px 16px rgba(0,0,0,.2);white-space:nowrap;}
+#toast.show{display:block;}
+#toast.ok{background:var(--green);color:#fff;}
+#toast.err{background:#c0392b;color:#fff;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:700px){
+  .grid-about,.grid-contact,.footer-grid{grid-template-columns:1fr;}
+  .nav-links{display:none;}
+  .room-grid{grid-template-columns:repeat(auto-fill,minmax(76px,1fr));}
+}
+@media print{
+  nav,footer,#toast,.btn-login,.btn-logout{display:none!important;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo" onclick="showPage('home')">SAI GUEST HOUSE<span>DASPALLA · ODISHA</span></div>
+  <ul class="nav-links">
+    <li><button onclick="showPage('home')" id="nav-home">Home</button></li>
+    <li><button onclick="showPage('rooms')" id="nav-rooms">Rooms</button></li>
+    <li><button onclick="showPage('amenities')" id="nav-amenities">Amenities</button></li>
+    <li><button onclick="showPage('attractions')" id="nav-attractions">Explore</button></li>
+    <li><button onclick="showPage('reviews')" id="nav-reviews">Reviews</button></li>
+    <li><button onclick="showPage('contact')" id="nav-contact">Contact</button></li>
+  </ul>
+  <div class="nav-right">
+    <span id="managerBadge" style="display:none" class="manager-badge">✏️ Manager</span>
+    <button class="btn-login" id="loginBtn" onclick="openLogin()">Login</button>
+    <button class="btn-logout" id="logoutBtn" style="display:none" onclick="doLogout()">Logout</button>
+  </div>
+</nav>
+
+<!-- ══════════ HOME PAGE ══════════ -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-badge">⭐ RATED 4.3 · 60+ GUESTS · DASPALLA, ODISHA</div>
+    <h1>Welcome to<br><span>Sai Guest House</span></h1>
+    <p class="hero-sub">Comfortable, affordable stays in the heart of Daspalla, Nayagarh. Feel at home — every time.</p>
+    <div class="hero-btns">
+      <button class="btn-gold" onclick="showPage('rooms')">Check Availability</button>
+      <button class="btn-outline" onclick="window.open('https://www.google.com/maps/place/SAI+GUEST+HOUSE/@20.3193301,84.8628179,17z/data=!3m1!4b1!4m6!3m5!1s0x3a227fa68b200cc5:0xb51f3758d7cbbdaa!8m2!3d20.3193301!4d84.8653928!16s%2Fg%2F11flghghjl?entry=ttu&g_ep=EgoyMDI2MDQxMy4wIKXMDSoASAFQAw%3D%3D' )">View Location</button>
+      <!-- <button class="btn-outline" onclick="showPage('rooms')">View Rooms</button> -->
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-num">4.3★</div><div class="stat-lbl">RATING</div></div>
+      <div><div class="stat-num">60+</div><div class="stat-lbl">REVIEWS</div></div>
+      <div><div class="stat-num">24/7</div><div class="stat-lbl">SUPPORT</div></div>
+      <div><div class="stat-num">NH-57</div><div class="stat-lbl">LOCATION</div></div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="sec">
+    <div class="container">
+      <div class="sec-label">WHO WE ARE</div>
+      <h2 class="sec-title">Your Home Away From Home</h2>
+      <div class="sec-line"></div>
+      <div class="grid-about">
+        <div class="about-img">🏨</div>
+        <div>
+          <h3 style="font-size:20px;color:var(--brown);margin-bottom:12px;">Sai Guest House, Daspalla</h3>
+          <p style="color:var(--gray);line-height:1.85;margin-bottom:14px;font-size:14px;font-family:Arial,sans-serif;">Nestled along NH-57 in Daspalla, Nayagarh, Sai Guest House welcomes travelers, families, and professionals with warm hospitality and quality service.</p>
+          <p style="color:var(--gray);line-height:1.85;font-size:14px;font-family:Arial,sans-serif;margin-bottom:16px;">We combine modern comfort with genuine Odishan warmth — every stay feels personal, safe, and memorable.</p>
+          <div class="about-point">Clean, well-maintained rooms for all budgets</div>
+          <div class="about-point">24×7 security & attentive staff</div>
+          <div class="about-point">Ideal for business, leisure & family stays</div>
+          <div class="about-point">Easy NH-57 highway access from Bhubaneswar</div>
+          <div class="about-point">Flexible check-in & booking options</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROOM PREVIEW -->
+  <div class="sec-alt">
+    <div class="container">
+      <div class="sec-label">ACCOMMODATION</div>
+      <h2 class="sec-title">Room Categories</h2>
+      <div class="sec-line"></div>
+      <div class="grid4">
+        <div class="room-preview-card" onclick="showPage('rooms')">
+          <div style="font-size:32px;margin-bottom:8px;">❄️🛏️</div>
+          <div style="font-weight:bold;color:var(--brown);font-size:14px;margin-bottom:4px;">AC Double</div>
+          <div style="font-size:12px;color:var(--gray);font-family:Arial,sans-serif;margin-bottom:6px;">11 rooms</div>
+          <div style="font-size:13px;font-weight:bold;color:var(--green);font-family:Arial,sans-serif;">₹1,200/night</div>
+        </div>
+        <div class="room-preview-card" onclick="showPage('rooms')">
+          <div style="font-size:32px;margin-bottom:8px;">❄️🏰</div>
+          <div style="font-weight:bold;color:var(--brown);font-size:14px;margin-bottom:4px;">AC Duplex</div>
+          <div style="font-size:12px;color:var(--gray);font-family:Arial,sans-serif;margin-bottom:6px;">1 room</div>
+          <div style="font-size:13px;font-weight:bold;color:var(--green);font-family:Arial,sans-serif;">₹2,500/night</div>
+        </div>
+        <div class="room-preview-card" onclick="showPage('rooms')">
+          <div style="font-size:32px;margin-bottom:8px;">🛏️</div>
+          <div style="font-weight:bold;color:var(--brown);font-size:14px;margin-bottom:4px;">Non-AC Single</div>
+          <div style="font-size:12px;color:var(--gray);font-family:Arial,sans-serif;margin-bottom:6px;">6 rooms</div>
+          <div style="font-size:13px;font-weight:bold;color:var(--green);font-family:Arial,sans-serif;">₹500/night</div>
+        </div>
+        <div class="room-preview-card" onclick="showPage('rooms')">
+          <div style="font-size:32px;margin-bottom:8px;">🛏️🛏️</div>
+          <div style="font-weight:bold;color:var(--brown);font-size:14px;margin-bottom:4px;">Non-AC Double</div>
+          <div style="font-size:12px;color:var(--gray);font-family:Arial,sans-serif;margin-bottom:6px;">12 rooms</div>
+          <div style="font-size:13px;font-weight:bold;color:var(--green);font-family:Arial,sans-serif;">₹800/night</div>
+        </div>
+        <div class="room-preview-card" onclick="showPage('rooms')">
+          <div style="font-size:32px;margin-bottom:8px;">🏛️</div>
+          <div style="font-weight:bold;color:var(--brown);font-size:14px;margin-bottom:4px;">Meeting Hall</div>
+          <div style="font-size:12px;color:var(--gray);font-family:Arial,sans-serif;margin-bottom:6px;">Capacity 50</div>
+          <div style="font-size:13px;font-weight:bold;color:var(--green);font-family:Arial,sans-serif;">₹3,000/session</div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:24px;">
+        <button class="btn-gold" onclick="showPage('rooms')">View Full Room Status →</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════ ROOMS PAGE ══════════ -->
+<div id="page-rooms" class="page">
+  <div class="sec" style="padding-top:28px;">
+    <div class="container">
+      <div class="rooms-header">
+        <div>
+          <div class="sec-label" style="text-align:left;">LIVE STATUS</div>
+          <h2 class="sec-title" style="text-align:left;margin-bottom:0;">Room Availability</h2>
+        </div>
+        <div id="managerModeTag" style="display:none;background:#e8f5e9;border:1px solid var(--green);color:var(--green);padding:6px 14px;border-radius:20px;font-size:12px;font-family:Arial,sans-serif;font-weight:bold;">✏️ Manager Mode – Click any room to edit</div>
+      </div>
+
+      <!-- Filter -->
+      <div class="filter-bar">
+        <button class="filter-btn active-all" id="fb-all" onclick="setFilter('all')">All Rooms</button>
+        <button class="filter-btn" id="fb-available" onclick="setFilter('available')">🟢 Available</button>
+        <button class="filter-btn" id="fb-booked" onclick="setFilter('booked')">🟠 Booked</button>
+        <button class="filter-btn" id="fb-reserved" onclick="setFilter('reserved')">🟣 Reserved</button>
+      </div>
+
+      <!-- Legend -->
+      <div class="legend">
+        <div class="legend-item"><span style="color:var(--green);font-size:16px;">🏠</span><span style="color:var(--green);font-weight:bold;font-family:Arial,sans-serif;font-size:12px;">Available</span></div>
+        <div class="legend-item"><span style="color:var(--orange);font-size:16px;">🏠</span><span style="color:var(--orange);font-weight:bold;font-family:Arial,sans-serif;font-size:12px;">Booked</span></div>
+        <div class="legend-item"><span style="color:var(--purple);font-size:16px;">🏠</span><span style="color:var(--purple);font-weight:bold;font-family:Arial,sans-serif;font-size:12px;">Reserved (with date)</span></div>
+      </div>
+
+      <!-- Room Categories -->
+      <div id="roomsContainer"></div>
+
+      <!-- Book CTA -->
+      <div id="bookCTA" style="background:var(--light-gold);border:1px solid var(--gold);border-radius:8px;padding:16px;text-align:center;margin-top:20px;">
+        <div style="font-size:13px;color:var(--brown);font-family:Arial,sans-serif;margin-bottom:10px;">📋 To book a room, contact us or WhatsApp us directly.</div>
+        <a href="https://wa.me/919438484811" class="btn-gold" style="display:inline-block;padding:10px 22px;" target="_blank">💬 Book via WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ AMENITIES PAGE ══════════ -->
+<div id="page-amenities" class="page">
+  <div class="sec-dark">
+    <div class="container">
+      <div class="sec-label">FACILITIES</div>
+      <h2 class="sec-title-white">Our Amenities</h2>
+      <div class="sec-line"></div>
+      <div class="grid4">
+        <div class="amenity-card"><div class="amenity-icon">🛡️</div><div class="amenity-name">24×7 Security</div></div>
+        <div class="amenity-card"><div class="amenity-icon">🅿️</div><div class="amenity-name">Free Parking</div></div>
+        <div class="amenity-card"><div class="amenity-icon">🧹</div><div class="amenity-name">Daily Housekeeping</div></div>
+        <div class="amenity-card"><div class="amenity-icon">🚿</div><div class="amenity-name">Hot Water</div></div>
+        <div class="amenity-card"><div class="amenity-icon">❄️</div><div class="amenity-name">AC Rooms</div></div>
+        <div class="amenity-card"><div class="amenity-icon">📺</div><div class="amenity-name">TV in Rooms</div></div>
+        <div class="amenity-card"><div class="amenity-icon">🍽️</div><div class="amenity-name">Meals on Request</div></div>
+        <div class="amenity-card"><div class="amenity-icon">🏢</div><div class="amenity-name">Conference Hall</div></div>
+        <div class="amenity-card"><div class="amenity-icon">💳</div><div class="amenity-name">UPI / Card Pay</div></div>
+        <div class="amenity-card"><div class="amenity-icon">📶</div><div class="amenity-name">Wi-Fi</div></div>
+        <div class="amenity-card"><div class="amenity-icon">🚗</div><div class="amenity-name">Road Access</div></div>
+        <div class="amenity-card"><div class="amenity-icon">🔔</div><div class="amenity-name">24×7 Reception</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ ATTRACTIONS PAGE ══════════ -->
+<div id="page-attractions" class="page">
+  <div class="sec">
+    <div class="container">
+      <div class="sec-label">EXPLORE NEARBY</div>
+      <h2 class="sec-title">Nearby Attractions</h2>
+      <div class="sec-line"></div>
+      <div class="grid2">
+        <div class="card" style="padding:20px;border-left:4px solid var(--gold);">
+          <div style="font-size:32px;margin-bottom:10px;">🦁</div>
+          <div style="font-weight:bold;font-size:16px;color:var(--brown);margin-bottom:4px;">Baisipalli Wildlife Sanctuary</div>
+          <div style="font-size:11px;color:var(--gold);font-family:Arial,sans-serif;letter-spacing:1px;margin-bottom:8px;">~30 KM AWAY</div>
+          <div style="font-size:13px;color:var(--gray);line-height:1.7;font-family:Arial,sans-serif;">Scenic reserve known for leopards and rich biodiversity in Nayagarh district.</div>
+        </div>
+        <div class="card" style="padding:20px;border-left:4px solid var(--gold);">
+          <div style="font-size:32px;margin-bottom:10px;">🌊</div>
+          <div style="font-weight:bold;font-size:16px;color:var(--brown);margin-bottom:4px;">Kuanria Dam</div>
+          <div style="font-size:11px;color:var(--gold);font-family:Arial,sans-serif;letter-spacing:1px;margin-bottom:8px;">NEARBY</div>
+          <div style="font-size:13px;color:var(--gray);line-height:1.7;font-family:Arial,sans-serif;">Beautiful dam and picnic spot surrounded by greenery — ideal for family outings.</div>
+        </div>
+        <div class="card" style="padding:20px;border-left:4px solid var(--gold);">
+          <div style="font-size:32px;margin-bottom:10px;">🛕</div>
+          <div style="font-weight:bold;font-size:16px;color:var(--brown);margin-bottom:4px;">Dashapalla Temple Sites</div>
+          <div style="font-size:11px;color:var(--gold);font-family:Arial,sans-serif;letter-spacing:1px;margin-bottom:8px;">LOCAL</div>
+          <div style="font-size:13px;color:var(--gray);line-height:1.7;font-family:Arial,sans-serif;">Historic religious sites reflecting the cultural and spiritual heritage of Daspalla.</div>
+        </div>
+        <div class="card" style="padding:20px;border-left:4px solid var(--gold);">
+          <div style="font-size:32px;margin-bottom:10px;">🏞️</div>
+          <div style="font-weight:bold;font-size:16px;color:var(--brown);margin-bottom:4px;">Nayagarh Town</div>
+          <div style="font-size:11px;color:var(--gold);font-family:Arial,sans-serif;letter-spacing:1px;margin-bottom:8px;">~40 KM AWAY</div>
+          <div style="font-size:13px;color:var(--gray);line-height:1.7;font-family:Arial,sans-serif;">District headquarters with markets, cultural landmarks and sightseeing spots.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ REVIEWS PAGE ══════════ -->
+<div id="page-reviews" class="page">
+  <div class="sec-alt">
+    <div class="container">
+      <div class="sec-label">GUEST EXPERIENCES</div>
+      <h2 class="sec-title">What Our Guests Say</h2>
+      <div class="sec-line"></div>
+      <div class="rating-box">
+        <div class="big-rating">4.3</div>
+        <div style="color:var(--gold);font-size:20px;margin:4px 0;">★★★★☆</div>
+        <div style="font-size:13px;color:var(--gray);font-family:Arial,sans-serif;">60+ verified reviews</div>
+      </div>
+      <div class="grid3">
+        <div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Very clean rooms and extremely friendly staff. Great value for money — I'll definitely stay again on my next trip to Daspalla."</div><div class="reviewer-row"><div class="reviewer-name">Ramesh Panda<br><span class="reviewer-loc">Bhubaneswar</span></div><div class="review-date">Jan 2026</div></div></div>
+        <div class="review-card"><div class="review-stars">★★★★☆</div><div class="review-text">"Convenient location right off NH-57. Peaceful and comfortable. Staff was very helpful with local travel information."</div><div class="reviewer-row"><div class="reviewer-name">Sunita Mohanty<br><span class="reviewer-loc">Cuttack</span></div><div class="review-date">Dec 2025</div></div></div>
+        <div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Best guest house in the area. Affordable pricing with clean facilities. Felt safe and welcome throughout our family stay."</div><div class="reviewer-row"><div class="reviewer-name">Dilip Kumar<br><span class="reviewer-loc">Berhampur</span></div><div class="review-date">Nov 2025</div></div></div>
+        <div class="review-card"><div class="review-stars">★★★★☆</div><div class="review-text">"Stayed for a business trip. Quiet rooms, clean bathrooms and hot water. The staff is attentive and courteous throughout."</div><div class="reviewer-row"><div class="reviewer-name">Priya Nayak<br><span class="reviewer-loc">Puri</span></div><div class="review-date">Oct 2025</div></div></div>
+        <div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Lovely place with a homely feel. The conference hall was perfect for our team meeting. Will definitely book again soon."</div><div class="reviewer-row"><div class="reviewer-name">Arun Mishra<br><span class="reviewer-loc">Sambalpur</span></div><div class="review-date">Sep 2025</div></div></div>
+        <div class="review-card"><div class="review-stars">★★★★☆</div><div class="review-text">"Good rooms at affordable rates. Parking available and 24/7 security made us feel safe during our entire stay."</div><div class="reviewer-row"><div class="reviewer-name">Meena Das<br><span class="reviewer-loc">Balangir</span></div><div class="review-date">Aug 2025</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ CONTACT PAGE ══════════ -->
+<div id="page-contact" class="page">
+  <div class="sec">
+    <div class="container">
+      <div class="sec-label">REACH US</div>
+      <h2 class="sec-title">Contact & Location</h2>
+      <div class="sec-line"></div>
+      <div class="grid-contact">
+        <div>
+          <h3 style="font-size:18px;color:var(--brown);margin-bottom:20px;">Get In Touch</h3>
+          <div class="cinfo-item"><div class="cinfo-icon">📍</div><div><div class="cinfo-label">ADDRESS</div><div class="cinfo-val">NH-57, Main Road, Daspalla<br>Nayagarh, Odisha – 752091</div></div></div>
+          <div class="cinfo-item"><div class="cinfo-icon">📞</div><div><div class="cinfo-label">PHONE</div><div class="cinfo-val">+91 94384 84811</div></div></div>
+          <div class="cinfo-item"><div class="cinfo-icon">✉️</div><div><div class="cinfo-label">EMAIL</div><div class="cinfo-val">saiguesthousedaspalla@gmail.com</div></div></div>
+          <div class="cinfo-item"><div class="cinfo-icon">🏦</div><div><div class="cinfo-label">PROPRIETOR</div><div class="cinfo-val">PURNACHANDRA PRADHAN<br>A/C: 2984001700015896<br>IFSC: PUNB0298400</div></div></div>
+          <button class="wa-btn" onclick="window.open('https://wa.me/919438484811','_blank')">💬 Chat on WhatsApp</button>
+          <div class="map-box">
+            <div style="font-size:36px;margin-bottom:8px;">🗺️</div>
+            <div style="font-size:13px;color:var(--gray);font-family:Arial,sans-serif;line-height:1.6;margin-bottom:10px;">NH-57, Main Road, Daspalla<br>Nayagarh, Odisha – 752091</div>
+            <a href="https://maps.google.com/?q=Sai+Guest+House+Daspalla+Nayagarh" target="_blank" class="map-link">Open in Google Maps ↗</a>
+          </div>
+        </div>
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:24px;">
+          <h3 style="font-size:18px;color:var(--brown);margin-bottom:18px;">Send an Enquiry</h3>
+          <div class="cf-field"><label class="cf-label">Full Name *</label><input class="cf-input" id="cfName" type="text" placeholder="Your name"></div>
+          <div class="cf-field"><label class="cf-label">Phone Number *</label><input class="cf-input" id="cfPhone" type="tel" placeholder="+91 XXXXX XXXXX"></div>
+          <div class="cf-field"><label class="cf-label">Email (optional)</label><input class="cf-input" id="cfEmail" type="email" placeholder="your@email.com"></div>
+          <div class="cf-field">
+            <label class="cf-label">Room Type</label>
+            <select class="cf-select" id="cfRoom">
+              <option value="">Select room type</option>
+              <option>AC Double</option><option>AC Duplex</option>
+              <option>Non-AC Single</option><option>Non-AC Double</option>
+              <option>Meeting Hall</option>
+            </select>
+          </div>
+          <div class="cf-field"><label class="cf-label">Message</label><textarea class="cf-textarea" id="cfMsg" placeholder="Dates, guests, queries..."></textarea></div>
+          <button class="btn-gold" style="width:100%;padding:12px;font-size:14px;" onclick="sendEnquiry()">Send via WhatsApp</button>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div style="margin-top:56px;">
+        <div class="sec-label">COMMON QUESTIONS</div>
+        <h2 class="sec-title">FAQ</h2>
+        <div class="sec-line"></div>
+        <div style="max-width:700px;margin:0 auto;">
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What are your check-in and check-out times?<span class="faq-icon">+</span></div><div class="faq-a">Standard check-in from 12:00 PM and check-out by 11:00 AM. Early/late check-in may be arranged on request.</div></div>
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is parking available?<span class="faq-icon">+</span></div><div class="faq-a">Yes, safe and free parking is available for all guests on the premises.</div></div>
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do you serve meals?<span class="faq-icon">+</span></div><div class="faq-a">Meals can be arranged on request. Please inform us at the time of booking.</div></div>
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What payment methods do you accept?<span class="faq-icon">+</span></div><div class="faq-a">We accept Cash, UPI, Card Swipe, and Net Banking.</div></div>
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Are group or event bookings available?<span class="faq-icon">+</span></div><div class="faq-a">Yes, we have a Conference Hall (capacity 50) for group stays and events. Call us to discuss requirements.</div></div>
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How do I get here from Bhubaneswar?<span class="faq-icon">+</span></div><div class="faq-a">We are on NH-57 in Daspalla, approximately 100 km from Bhubaneswar. Reachable by bus, taxi, or private vehicle.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-name">SAI GUEST HOUSE</div>
+      <p class="footer-brand-p">Comfort you deserve, hospitality you remember.<br>Daspalla, Nayagarh, Odisha.</p>
+    </div>
+    <div>
+      <div class="footer-col-head">QUICK LINKS</div>
+      <button class="footer-link" onclick="showPage('home')">Home</button>
+      <button class="footer-link" onclick="showPage('rooms')">Rooms & Rates</button>
+      <button class="footer-link" onclick="showPage('amenities')">Amenities</button>
+      <button class="footer-link" onclick="showPage('attractions')">Explore Nearby</button>
+      <button class="footer-link" onclick="showPage('reviews')">Reviews</button>
+    </div>
+    <div>
+      <div class="footer-col-head">CONTACT</div>
+      <div class="footer-link">+91 94384 84811</div>
+      <div class="footer-link" style="word-break:break-all;">saiguesthousedaspalla@gmail.com</div>
+      <div class="footer-link">NH-57, Daspalla, Nayagarh</div>
+      <button class="footer-link" onclick="showPage('contact')">Send Enquiry</button>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Sai Guest House · All Rights Reserved · Designed for comfort, crafted with tradition</div>
+</footer>
+
+<!-- LOGIN MODAL -->
+<div class="overlay" id="loginModal" style="display:none;" onclick="closeLogin(event)">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-title">Login</div>
+    <div class="modal-sub">Manager or Guest access</div>
+    <div style="text-align:center;margin-bottom:16px;">
+      <div style="font-size:36px;margin-bottom:6px;">🔐</div>
+      <div style="font-size:12px;color:var(--gray);font-family:Arial,sans-serif;">Enter Manager PIN</div>
+    </div>
+    <div id="pinDots" style="display:flex;justify-content:center;gap:12px;margin-bottom:20px;">
+      <div class="pin-dot" id="pd0"></div>
+      <div class="pin-dot" id="pd1"></div>
+      <div class="pin-dot" id="pd2"></div>
+      <div class="pin-dot" id="pd3"></div>
+      <div class="pin-dot" id="pd4"></div>
+      <div class="pin-dot" id="pd5"></div>
+    </div>
+    <div id="pinPad" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:240px;margin:0 auto 12px;">
+      <button class="pin-key" onclick="pinPress('1')">1</button>
+      <button class="pin-key" onclick="pinPress('2')">2</button>
+      <button class="pin-key" onclick="pinPress('3')">3</button>
+      <button class="pin-key" onclick="pinPress('4')">4</button>
+      <button class="pin-key" onclick="pinPress('5')">5</button>
+      <button class="pin-key" onclick="pinPress('6')">6</button>
+      <button class="pin-key" onclick="pinPress('7')">7</button>
+      <button class="pin-key" onclick="pinPress('8')">8</button>
+      <button class="pin-key" onclick="pinPress('9')">9</button>
+      <button class="pin-key pin-clear" onclick="pinClear()">✕</button>
+      <button class="pin-key" onclick="pinPress('0')">0</button>
+      <button class="pin-key pin-del" onclick="pinDel()">⌫</button>
+    </div>
+    <div id="loginErr" class="err-msg" style="display:none;text-align:center;"></div>
+    <div style="text-align:center;margin-top:4px;">
+      <button class="btn-outline" style="padding:8px 24px;font-size:13px;" onclick="closeLogin()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- EDIT ROOM MODAL -->
+<div class="overlay" id="editModal" style="display:none;" onclick="closeEdit(event)">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-title" id="editTitle">Edit Room</div>
+    <div class="modal-sub" id="editSub"></div>
+    <label class="m-label">Status</label>
+    <select class="m-select" id="editStatus" onchange="toggleResDate()">
+      <option value="available">Available</option>
+      <option value="booked">Booked</option>
+      <option value="reserved">Reserved</option>
+    </select>
+    <label class="m-label">Rate per Night / Session (₹)</label>
+    <input class="m-input" id="editRate" type="number">
+    <div id="resDateWrap" style="display:none;">
+      <label class="m-label">Reserved Until</label>
+      <input class="m-input" id="editResDate" type="date">
+    </div>
+    <div class="modal-btns">
+      <button class="btn-gold" style="flex:1;padding:11px;" onclick="saveRoomEdit()">Save Changes</button>
+      <button class="btn-outline" style="flex:1;padding:11px;" onclick="closeEdit()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+<script>
+/* ═══════════════════════════════
+   DATA
+═══════════════════════════════ */
+const INIT = {
+  ac_double: Array.from({length:11},(_,i)=>({id:`ACD${i+1}`,type:'AC Double',status:'available',reservedUntil:null,rate:1200})),
+  ac_duplex: [{id:'ACDX1',type:'AC Duplex',status:'available',reservedUntil:null,rate:2500}],
+  noac_single: Array.from({length:6},(_,i)=>({id:`NAS${i+1}`,type:'Non-AC Single',status:'available',reservedUntil:null,rate:500})),
+  noac_double: Array.from({length:12},(_,i)=>({id:`NAD${i+1}`,type:'Non-AC Double',status:'available',reservedUntil:null,rate:800})),
+  meeting: [{id:'MH1',type:'Meeting Hall',status:'available',reservedUntil:null,rate:3000,capacity:50}]
+};
+
+function loadRooms(){ try{const d=localStorage.getItem('sgh_rooms_v3');return d?JSON.parse(d):INIT;}catch{return INIT;} }
+function saveRooms(d){ try{localStorage.setItem('sgh_rooms_v3',JSON.stringify(d));}catch{} }
+let ROOMS = loadRooms();
+
+/* ═══════════════════════════════
+   SESSION
+═══════════════════════════════ */
+let session = null; // {role:'manager'|'user'}
+
+/* ═══════════════════════════════
+   NAVIGATION
+═══════════════════════════════ */
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-links button').forEach(b=>b.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  const nb = document.getElementById('nav-'+id);
+  if(nb) nb.classList.add('active');
+  if(id==='rooms') renderRooms();
+  window.scrollTo(0,0);
+}
+
+/* ═══════════════════════════════
+   PIN AUTH
+   Simple hash — works on file://, http, https
+   Default PIN: 112233
+   To change: open console, run simpleHash('yournewpin'), copy result, replace MANAGER_PIN_HASH
+═══════════════════════════════ */
+const MANAGER_PIN_HASH = simpleHash('112233');
+
+function simpleHash(str){
+  let hash = 5381;
+  for(let i=0;i<str.length;i++){
+    hash = ((hash<<5)+hash)^str.charCodeAt(i);
+    hash = hash>>>0;
+  }
+  // stretch with multiple rounds for extra safety
+  for(let r=0;r<1000;r++){
+    hash = ((hash<<5)+hash)^(r%256);
+    hash = hash>>>0;
+  }
+  return hash.toString(16).padStart(8,'0')+'_sgh_'+str.length;
+}
+
+async function hashPin(pin){ return simpleHash(pin); }
+
+/* ── PIN STATE ── */
+let pinBuffer = '';
+const PIN_LENGTH = 6;
+
+function pinPress(d){
+  if(pinBuffer.length >= PIN_LENGTH) return;
+  pinBuffer += d;
+  updateDots();
+  if(pinBuffer.length === PIN_LENGTH) setTimeout(verifyPin, 120);
+}
+function pinDel(){ pinBuffer = pinBuffer.slice(0,-1); updateDots(); }
+function pinClear(){ pinBuffer = ''; updateDots(); document.getElementById('loginErr').style.display='none'; }
+
+function updateDots(){
+  for(let i=0;i<PIN_LENGTH;i++){
+    const d = document.getElementById('pd'+i);
+    d.classList.toggle('filled', i < pinBuffer.length);
+    d.classList.remove('error');
+  }
+}
+
+async function verifyPin(){
+  const hash = simpleHash(pinBuffer);
+  if(hash === MANAGER_PIN_HASH){
+    // Success
+    session = { role:'manager' };
+    sessionStorage.setItem('sgh_role','manager');
+    sessionStorage.setItem('sgh_exp', Date.now() + 8*60*60*1000);
+    closeLogin();
+    applySessionUI('manager');
+    renderRooms();
+    showToast('✅ Welcome, Manager!','ok');
+    pinBuffer=''; updateDots();
+  } else {
+    // Wrong PIN — shake animation
+    for(let i=0;i<PIN_LENGTH;i++) document.getElementById('pd'+i).classList.add('error');
+    document.getElementById('pinDots').style.animation='shake .4s ease';
+    const errEl = document.getElementById('loginErr');
+    errEl.textContent='Incorrect PIN. Try again.'; errEl.style.display='block';
+    setTimeout(()=>{
+      document.getElementById('pinDots').style.animation='';
+      pinBuffer=''; updateDots();
+    },600);
+  }
+}
+
+/* ── SESSION ── */
+function restoreSession(){
+  const role = sessionStorage.getItem('sgh_role');
+  const exp  = parseInt(sessionStorage.getItem('sgh_exp')||'0');
+  if(role && Date.now() < exp){
+    session = { role };
+    applySessionUI(role);
+  }
+}
+
+function applySessionUI(role){
+  document.getElementById('loginBtn').style.display='none';
+  document.getElementById('logoutBtn').style.display='inline-block';
+  if(role==='manager'){
+    document.getElementById('managerBadge').style.display='inline-block';
+    document.getElementById('managerModeTag').style.display='inline-block';
+  }
+}
+
+/* ── LOGIN OPEN / CLOSE ── */
+function openLogin(){ pinBuffer=''; updateDots(); document.getElementById('loginErr').style.display='none'; document.getElementById('loginModal').style.display='flex'; }
+function closeLogin(e){ if(!e||e.target===document.getElementById('loginModal')){ document.getElementById('loginModal').style.display='none'; pinBuffer=''; updateDots(); } }
+
+function doLogout(){
+  session=null;
+  sessionStorage.removeItem('sgh_role');
+  sessionStorage.removeItem('sgh_exp');
+  document.getElementById('loginBtn').style.display='inline-block';
+  document.getElementById('logoutBtn').style.display='none';
+  document.getElementById('managerBadge').style.display='none';
+  document.getElementById('managerModeTag').style.display='none';
+  renderRooms(); showToast('Logged out.','ok');
+}
+
+/* ═══════════════════════════════
+   FILTER
+═══════════════════════════════ */
+let currentFilter = 'all';
+function setFilter(f){
+  currentFilter = f;
+  ['all','available','booked','reserved'].forEach(k=>{
+    const b = document.getElementById('fb-'+k);
+    b.className='filter-btn'+(f===k?' active-'+k:'');
+  });
+  renderRooms();
+}
+
+/* ═══════════════════════════════
+   RENDER ROOMS
+═══════════════════════════════ */
+function statusColor(s){ return s==='available'?'var(--green)':s==='booked'?'var(--orange)':'var(--purple)'; }
+function statusLabel(s){ return s==='available'?'Available':s==='booked'?'Booked':'Reserved'; }
+function fmtDate(d){ return d?new Date(d).toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'}):''; }
+function roomIcon(type){ if(type.includes('Meeting'))return'🏛️'; if(type.includes('Duplex'))return'🏰'; if(type.includes('Single'))return'🏠'; return'🏡'; }
+
+function makeTile(room, cat){
+  const col = statusColor(room.status);
+  const bg = room.status==='available'?'#f0fff6':room.status==='booked'?'#fff8f0':'#f5f0ff';
+  const isManager = session&&session.role==='manager';
+  const tile = document.createElement('div');
+  tile.className = 'room-tile s-'+room.status+(isManager?' manager-edit':'');
+  tile.style.cssText = `border-color:${col};background:${bg};`;
+  tile.innerHTML = `
+    <div class="room-tile-icon" style="color:${col}">${roomIcon(room.type)}</div>
+    <div class="room-tile-id" style="color:${col}">${room.id}</div>
+    <div class="room-tile-dot" style="background:${col}"></div>
+    <div class="room-tile-status" style="color:${col}">${statusLabel(room.status)}</div>
+    ${room.reservedUntil?`<div class="room-tile-resdate">Until ${fmtDate(room.reservedUntil)}</div>`:''}
+    <div style="font-size:11px;color:var(--green);font-family:Arial,sans-serif;font-weight:bold;">₹${room.rate.toLocaleString()}</div>
+    ${isManager?'<div style="font-size:9px;color:var(--gray);font-family:Arial,sans-serif;margin-top:2px;">✏️ Edit</div>':''}
+  `;
+  if(isManager) tile.onclick = ()=>openEdit(room,cat);
+  return tile;
+}
+
+function renderCat(container, title, icon, desc, cats){
+  const allRooms = cats.flatMap(c=>ROOMS[c].map(r=>({...r,cat:c})));
+  const filtered = currentFilter==='all'?allRooms:allRooms.filter(r=>r.status===currentFilter);
+  if(!filtered.length) return;
+  const sec = document.createElement('div');
+  sec.className = 'cat-section';
+  sec.innerHTML = `
+    <div class="cat-title">
+      <span class="cat-title-icon">${icon}</span>
+      <div><div class="cat-title-main">${title}</div><div class="cat-title-sub">${desc}</div></div>
+    </div>
+    <div class="room-grid" id="rg-${cats[0]}"></div>
+  `;
+  container.appendChild(sec);
+  const grid = sec.querySelector('.room-grid');
+  filtered.forEach(r=> grid.appendChild(makeTile(r,r.cat)));
+}
+
+function renderMeeting(container){
+  const room = ROOMS.meeting[0];
+  if(currentFilter!=='all'&&room.status!==currentFilter) return;
+  const col = statusColor(room.status);
+  const isManager = session&&session.role==='manager';
+  const sec = document.createElement('div');
+  sec.className='cat-section';
+  sec.innerHTML=`
+    <div class="cat-title">
+      <span class="cat-title-icon">🏛️</span>
+      <div><div class="cat-title-main">Meeting Hall</div><div class="cat-title-sub">Capacity: 50 persons · ₹3,000/session</div></div>
+    </div>
+    <div class="meeting-card" style="border-color:${col}">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:14px;">
+        <div>
+          <div style="font-size:28px;margin-bottom:8px;">🏛️</div>
+          <div style="font-weight:bold;font-size:16px;color:var(--brown);margin-bottom:10px;">Conference Hall – MH1</div>
+          <div class="meeting-amenity">👥 Capacity: 50 persons</div>
+          <div class="meeting-amenity">📽️ Projector screen</div>
+          <div class="meeting-amenity">🖊️ Whiteboard & markers</div>
+          <div class="meeting-amenity">❄️ Air conditioned</div>
+          <div class="meeting-amenity">📶 High-speed Wi-Fi</div>
+          <div class="meeting-amenity">🎤 Microphone setup</div>
+          <div class="meeting-amenity">☕ Tea/coffee on request</div>
+        </div>
+        <div style="text-align:center;min-width:110px;">
+          <div style="background:${col};color:#fff;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:bold;font-family:Arial,sans-serif;margin-bottom:8px;">${statusLabel(room.status)}</div>
+          <div style="font-size:20px;font-weight:bold;color:var(--green);font-family:Arial,sans-serif;">₹${room.rate.toLocaleString()}</div>
+          <div style="font-size:11px;color:var(--gray);font-family:Arial,sans-serif;">/session</div>
+          ${room.reservedUntil?`<div style="font-size:11px;color:var(--purple);margin-top:4px;font-family:Arial,sans-serif;">Until ${fmtDate(room.reservedUntil)}</div>`:''}
+          ${isManager?`<button class="btn-gold" style="margin-top:10px;padding:7px 14px;font-size:12px;" onclick="openEdit(ROOMS.meeting[0],'meeting')">✏️ Edit</button>`:''}
+        </div>
+      </div>
+    </div>
+  `;
+  container.appendChild(sec);
+}
+
+function renderRooms(){
+  const c = document.getElementById('roomsContainer');
+  c.innerHTML='';
+  renderCat(c,'AC Rooms – Double','❄️','11 rooms · ₹1,200/night · AC · Attached bath · TV · Hot water',['ac_double']);
+  renderCat(c,'AC Rooms – Duplex','❄️🏰','1 room · ₹2,500/night · Premium duplex suite',['ac_duplex']);
+  renderCat(c,'Non-AC Rooms – Single','🛏️','6 rooms · ₹500/night · Fan · Attached bath',['noac_single']);
+  renderCat(c,'Non-AC Rooms – Double','🛏️🛏️','12 rooms · ₹800/night · Fan · Attached bath · TV',['noac_double']);
+  renderMeeting(c);
+  document.getElementById('bookCTA').style.display = session?'none':'block';
+}
+
+/* ═══════════════════════════════
+   EDIT ROOM MODAL
+═══════════════════════════════ */
+let editTarget = null;
+function openEdit(room, cat){
+  editTarget = {room,cat};
+  document.getElementById('editTitle').textContent = 'Edit Room – '+room.id;
+  document.getElementById('editSub').textContent = room.type;
+  document.getElementById('editStatus').value = room.status;
+  document.getElementById('editRate').value = room.rate;
+  document.getElementById('editResDate').value = room.reservedUntil||'';
+  toggleResDate();
+  document.getElementById('editModal').style.display='flex';
+}
+function closeEdit(e){ if(!e||e.target===document.getElementById('editModal')) document.getElementById('editModal').style.display='none'; editTarget=null; }
+function toggleResDate(){ document.getElementById('resDateWrap').style.display = document.getElementById('editStatus').value==='reserved'?'block':'none'; }
+function saveRoomEdit(){
+  if(!editTarget) return;
+  const {room,cat} = editTarget;
+  const st = document.getElementById('editStatus').value;
+  const rate = parseInt(document.getElementById('editRate').value)||room.rate;
+  const resDate = st==='reserved'?document.getElementById('editResDate').value:null;
+  ROOMS[cat] = ROOMS[cat].map(r=>r.id===room.id?{...r,status:st,rate,reservedUntil:resDate}:r);
+  saveRooms(ROOMS);
+  closeEdit();
+  renderRooms();
+  showToast('Room '+room.id+' updated!','ok');
+}
+
+/* ═══════════════════════════════
+   CONTACT
+═══════════════════════════════ */
+function sendEnquiry(){
+  const name = document.getElementById('cfName').value.trim();
+  const phone = document.getElementById('cfPhone').value.trim();
+  const room = document.getElementById('cfRoom').value;
+  const msg = document.getElementById('cfMsg').value.trim();
+  if(!name||!phone){ showToast('Please fill in name and phone.','err'); return; }
+  const txt = `Hi, I am ${name} (${phone}).${room?' Interested in: '+room+'.':''} ${msg}`;
+  window.open('https://wa.me/919438484811?text='+encodeURIComponent(txt),'_blank');
+}
+
+/* ═══════════════════════════════
+   FAQ
+═══════════════════════════════ */
+function toggleFaq(el){ el.parentElement.classList.toggle('open'); }
+
+/* ═══════════════════════════════
+   TOAST
+═══════════════════════════════ */
+function showToast(msg,type){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.className='show '+(type||'');
+  setTimeout(()=>t.className='',3200);
+}
+
+/* INIT */
+restoreSession();
+showPage('home');
+</script>
+</body>
+</html>
